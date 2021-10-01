@@ -50,11 +50,11 @@ if (!is_dir(MVC .$scope)) die(json_encode(['error' => 'Application does not exis
 if (!is_dir(MVC .$scope.'/'. $version)) die(json_encode(['error' => 'Specified version does not exist']));
 $file_path = MVC.$scope."/".$version."/endpoints/".$call.".php";
 
-// $_SERVER['ENDPOINT'] = $call;
+$_SERVER['ENDPOINT'] = $call;
 
-// $autoload_path = MVC.$scope."/".$version."/autoload_index.php";
-// if(file_exists($autoload_path)) include_once $autoload_path;
-// else echo die(json_encode(['error' => 'Application could not load']));
+$autoload_path = MVC.$scope."/".$version."/autoload_index.php";
+if(file_exists($autoload_path)) include_once $autoload_path;
+else echo die(json_encode(['error' => 'Application could not load']));
 
 // if(file_exists($file_path)) include_once $file_path;
 // else die(json_encode(['error' => 'Silence is Golden']));
