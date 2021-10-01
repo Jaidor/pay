@@ -50,9 +50,7 @@ trait Request{
 
         if(!empty($_POST['start'])) {
 
-            /* decrypt data */
-            $data = $software->privDecrypt($_POST['start']);
-            $data = json_decode($data,true);
+            $data = $_POST['start'];
             
             /* To support multidimentional array */
             $clean_data=[];
@@ -61,9 +59,6 @@ trait Request{
                 else $clean_data[trim($key)] = $software->antiHacking($info);
             }
 
-            $request = ['endpoint' =>$software->getCall(), 'scope'=>$software->getScope(), 'method'=>$software->getMethod(), 'version'=>$software->getVersion(), 'header'=>$software->getHeader(), 'request' => $data, 'date' => date('Y-m-d H:i:s')];
-            $request = $software->array2string($request);
-            $software->dbquery("insert into #__api_trail (api_trail_method, api_trail_data) values('{$software->getMethod()}', '$request') ");
             file_put_contents(MVC.'extension/logs/request_'.$software->getScope().'_'.$software->getMethod().'.txt',"Module: ".$software->getCall()."\n\nHeader:".print_r($software->getHeader(),true)."\n\nRaw: ".$_POST['start']."\n\nData: ".print_r($data,true));
 
             $this->request = $clean_data;

@@ -8,6 +8,8 @@ class CreatepayController {
 
     public function payment(){
         global $software;
+
+        echo "I got into create payment safely....";
     
     }
 }
