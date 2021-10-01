@@ -16,7 +16,7 @@ $software->setToken($finalToken); /* Set session  */
 $request_link = $_SERVER['REQUEST_URI'];
 $request_link = explode('/',$request_link);
 
-print_r($_SERVER);
+print_r($request_link);
 // unset($request_link[0]);
 
 // $method = $software->antiHacking($request_link[2]);
