@@ -3,20 +3,20 @@ set_time_limit(120);
 ob_end_clean();
 header('Content-Type: application/json');
 
-echo "I got here again safely...";
+$header =  apache_request_headers();
+$xAuthToken =  (isset($header['X-Authorization']))? $header['X-Authorization'] : '';  /* Some servers uses X-Authorization  */
+$authToken =  (isset($header['Authorization']))? $header['Authorization'] : '';  /* While some servers uses Authorization  */
 
-// $header =  apache_request_headers();
-// $xAuthToken =  (isset($header['X-Authorization']))? $header['X-Authorization'] : '';  /* Some servers uses X-Authorization  */
-// $authToken =  (isset($header['Authorization']))? $header['Authorization'] : '';  /* While some servers uses Authorization  */
+$finalToken =  ($xAuthToken)? $xAuthToken : $authToken;
+$finalToken = str_replace('Bearer ', '', $finalToken);
 
-// $finalToken =  ($xAuthToken)? $xAuthToken : $authToken;
-// $finalToken = str_replace('Bearer ', '', $finalToken);
+$software->setHeader($header); /* Set header  */
+$software->setToken($finalToken); /* Set session  */
 
-// $software->setHeader($header); /* Set header  */
-// $software->setToken($finalToken); /* Set session  */
+$request_link = $_SERVER['REQUEST_URI'];
+$request_link = explode('/',$request_link);
 
-// $request_link = $_SERVER['REQUEST_URI'];
-// $request_link = explode('/',$request_link);
+print_r($request_link);
 // unset($request_link[0]);
 
 // $method = $software->antiHacking($request_link[2]);
