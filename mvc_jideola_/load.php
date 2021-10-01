@@ -3,7 +3,7 @@ set_time_limit(120);
 ob_end_clean();
 header('Content-Type: application/json');
 
-// $http_origin = $_SERVER['HTTP_ORIGIN'];
+$http_origin = $_SERVER['HTTP_ORIGIN'];
 // if ($http_origin == "https://flypay.netlify.app")
 // {
 //     header("Access-Control-Allow-Origin: $http_origin");
