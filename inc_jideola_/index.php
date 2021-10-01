@@ -26,6 +26,5 @@ foreach (glob(__DIR__."/*.php") as $filename) {
 }
 
 $software = new softwareFunctions($params);
-// include_once MVC."load.php";
-echo "I got here safely...";
+include_once MVC."load.php";
 ?>
