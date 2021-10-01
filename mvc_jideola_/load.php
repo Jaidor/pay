@@ -3,20 +3,16 @@ set_time_limit(120);
 ob_end_clean();
 header('Content-Type: application/json');
 
-ini_set('display_errors', 1); 
-ini_set('display_startup_errors', 1); 
-error_reporting(E_ALL);
-
 // $http_origin = $_SERVER['HTTP_ORIGIN'];
 // if ($http_origin == "https://flypay.netlify.app")
 // {
 //     header("Access-Control-Allow-Origin: $http_origin");
 // }
 
-// header("Access-Control-Allow-Origin: *");
-// header("Access-Control-Allow-Credentials", 'true');
-// header("Access-Control-Allow-Methods", 'POST, GET, PUT, DELETE, OPTIONS');
-// header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Credentials", 'true');
+header("Access-Control-Allow-Methods", 'POST, GET, PUT, DELETE, OPTIONS');
+header("Access-Control-Allow-Headers: *");
 
 $header =  apache_request_headers();
 $xAuthToken =  (isset($header['X-Authorization']))? $header['X-Authorization'] : '';  /* Some servers uses X-Authorization  */
