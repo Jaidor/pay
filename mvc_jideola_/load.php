@@ -13,10 +13,10 @@ error_reporting(E_ALL);
 //     header("Access-Control-Allow-Origin: $http_origin");
 // }
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Credentials", 'true');
-header("Access-Control-Allow-Methods", 'POST, GET, PUT, DELETE, OPTIONS');
-header("Access-Control-Allow-Headers: *");
+// header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Credentials", 'true');
+// header("Access-Control-Allow-Methods", 'POST, GET, PUT, DELETE, OPTIONS');
+// header("Access-Control-Allow-Headers: *");
 
 $header =  apache_request_headers();
 $xAuthToken =  (isset($header['X-Authorization']))? $header['X-Authorization'] : '';  /* Some servers uses X-Authorization  */
