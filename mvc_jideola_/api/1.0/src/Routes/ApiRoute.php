@@ -6,10 +6,7 @@ class ApiRoute{
     public static function loadRoute()
     {
         return[
-            'login'=>['POST'],
-            'register'=>['POST'],
-            'logout'=>['POST'],
-            'configure'=>['POST'],
+            'create_pay'=>['POST'],
             'transactions'=>['POST']
         ];
     }

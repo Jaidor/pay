@@ -56,5 +56,5 @@ $autoload_path = MVC.$scope."/".$version."/autoload_index.php";
 if(file_exists($autoload_path)) include_once $autoload_path;
 else echo die(json_encode(['error' => 'Application could not load']));
 
-// if(file_exists($file_path)) include_once $file_path;
-// else die(json_encode(['error' => 'Silence is Golden']));
+if(file_exists($file_path)) include_once $file_path;
+else die(json_encode(['error' => 'Silence is Golden']));
