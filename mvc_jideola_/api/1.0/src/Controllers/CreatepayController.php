@@ -66,7 +66,7 @@ class CreatepayController {
         // );
         // $db = $client->test;
 
-        $software->feedback(true, 'OK', ['Payment was successful'], []);
+        $software->feedback(true, 'OK', ['Payment was successful'], ['total'=>$total]);
     
     }
 }
