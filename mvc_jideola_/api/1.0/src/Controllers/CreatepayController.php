@@ -9,9 +9,6 @@ class CreatepayController {
     public function payment(){
         global $software;
 
-        print_r($this->request);
-        die();
-
         // Array
         // (
         //     [payQuan] => 4
