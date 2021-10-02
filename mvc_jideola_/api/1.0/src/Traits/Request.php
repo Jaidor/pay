@@ -57,7 +57,7 @@ trait Request{
                 else $clean_data[trim($key)] = $software->antiHacking($info);
             }
 
-            file_put_contents(MVC.'extension/logs/request_'.$software->getScope().'_'.$software->getMethod().'.txt',"Module: ".$software->getCall()."\n\nHeader:".print_r($software->getHeader(),true)."\n\nRaw: ".$_POST."\n\nData: ".print_r($_POST,true));
+            // file_put_contents(MVC.'extension/logs/request_'.$software->getScope().'_'.$software->getMethod().'.txt',"Module: ".$software->getCall()."\n\nHeader:".print_r($software->getHeader(),true)."\n\nRaw: ".$_POST."\n\nData: ".print_r($_POST,true));
 
             $this->request = $clean_data;
         }
