@@ -48,6 +48,9 @@ trait Request{
         $incomingJson = json_decode(file_get_contents('php://input'), true);
         if(!empty($incomingJson)) $_POST = $incomingJson;
 
+        print_r($_POST);
+        die();
+
         if(!empty($_POST['start'])) {
 
             $data = $_POST['start'];
