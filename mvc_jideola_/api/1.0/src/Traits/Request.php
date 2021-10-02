@@ -48,16 +48,14 @@ trait Request{
         $incomingJson = json_decode(file_get_contents('php://input'), true);
         if(!empty($incomingJson)) $_POST = $incomingJson;
 
-        if(!empty($_POST['start'])) {
+        if(!empty($_POST)) {
 
-            echo "I gothere for post setting...";
+            echo "I got here for posting of arrays...";
             die();
-
-            $data = $_POST['start'];
             
             /* To support multidimentional array */
             $clean_data=[];
-            foreach ($data as $key=> $info) {
+            foreach ($_POST as $key=> $info) {
                 if(is_array($info)) $clean_data[trim($key)] = $this->clean_array($info);
                 else $clean_data[trim($key)] = $software->antiHacking($info);
             }
