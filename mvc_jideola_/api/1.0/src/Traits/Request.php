@@ -48,10 +48,10 @@ trait Request{
         $incomingJson = json_decode(file_get_contents('php://input'), true);
         if(!empty($incomingJson)) $_POST = $incomingJson;
 
-        print_r($_POST);
-        die();
-
         if(!empty($_POST['start'])) {
+
+            echo "I gothere for post setting...";
+            die();
 
             $data = $_POST['start'];
             
