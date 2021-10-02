@@ -242,10 +242,7 @@ class softwareFunctions{
         ob_end_clean();
 
         $responseArr = ['status' => $status, 'code' => $code, 'message' => $message, 'response' => $response];
-		$responseArr = json_encode(['data'=>$responseArr]);
-		$responseArr = $this->pubEncrypt($responseArr);
-
-         die(json_encode(['revert' => $responseArr]));
+        die(json_encode(['data' => $responseArr]));
     }
 
 	public function log($err)
