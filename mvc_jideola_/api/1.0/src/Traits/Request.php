@@ -49,9 +49,6 @@ trait Request{
         if(!empty($incomingJson)) $_POST = $incomingJson;
 
         if(!empty($_POST)) {
-
-            echo "I got here for posting of arrays...";
-            die();
             
             /* To support multidimentional array */
             $clean_data=[];
