@@ -26,9 +26,11 @@ class CreatepayController {
         $checkArray = ['payQuan', 'payFullname', 'payChecks', 'payDigit', 'payItem', 'payCat','payNor','payAvail','payUnit'];
         foreach ($checkArray as $check){
             if(isset($this->request[$check])) {
-                if (empty($this->request[$check])) $software->feedback(false, 'REG_000', ['Oops! '.$check.' was not provided.']);
-            }else $software->feedback(false, 'REG_001', ['Oops! '.$check.' was not set.']);
+                if (empty($this->request[$check])) $software->feedback(false, 'PAY_000', ['Oops! '.$check.' was not provided.']);
+            }else $software->feedback(false, 'PAY_001', ['Oops! '.$check.' was not set.']);
         }
+
+        $software->feedback(true, 'OK', ['Payment was successful'], []);
     
     }
 }
