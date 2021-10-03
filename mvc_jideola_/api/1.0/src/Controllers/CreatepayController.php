@@ -34,6 +34,8 @@ class CreatepayController {
        $normal_price = $this->request['payNor'];
        $total = ($normal_price * $quantity);
 
+       
+
 
          // connect to mongodb
         // $m = new MongoClient();
