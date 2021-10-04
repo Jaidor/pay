@@ -48,7 +48,7 @@ class TransactionsController {
             $sendx['unitPrice'] = '5000';
             $sendx['normalPrice'] = '2000';
 
-            $all_send[] = $send;
+            $all_send[] = $sendx;
 
 
             // $tx_details = [];
