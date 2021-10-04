@@ -21,11 +21,11 @@ class ListPurchaseController {
             $all_send[] = $send;
 
             $sendx=[];
-            $send['id'] = '2';
-            $send['item'] = 'Electronics';
-            $send['quantity'] = '13';
-            $send['amountPaid'] = '5000';
-            $send['profitMade'] = '10';
+            $sendx['id'] = '2';
+            $sendx['item'] = 'Electronics';
+            $sendx['quantity'] = '13';
+            $sendx['amountPaid'] = '5000';
+            $sendx['profitMade'] = '10';
 
             $all_send[] = $sendx;
 
