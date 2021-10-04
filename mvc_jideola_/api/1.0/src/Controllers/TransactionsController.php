@@ -51,22 +51,22 @@ class TransactionsController {
             $all_send[] = $send;
 
 
-            $tx_details = [];
-            foreach($all_send as $tx){
+            // $tx_details = [];
+            // foreach($all_send as $tx){
 
-                $value['id'] = $tx['transaction_id'];
-                $value['ref'] = $tx['transaction_message'];
-                $value['date'] = $tx['transaction_date'];
+            //     $value['id'] = $tx['transaction_id'];
+            //     $value['ref'] = $tx['transaction_message'];
+            //     $value['date'] = $tx['transaction_date'];
 
-                $tx_details[] = $value;
-            }
+            //     $tx_details[] = $value;
+            // }
 
             $pagination = [];
             $page['totalRecords'] = $totalRecords;
             $page['totalPages'] = $totalPages;
             $pagination[] = $page;
 
-            if($tx_details) $software->feedback(true, 'TRH_OK', ['Details fetched successfully'],['data'=>$tx_details, 'pagination'=>$pagination]);
+            if($all_send) $software->feedback(true, 'TRH_OK', ['Details fetched successfully'],['data'=>$all_send, 'pagination'=>$pagination]);
             else $software->feedback(false, 'TRH_000', ['Unable to fetch transaction history']);
                     
         // }
