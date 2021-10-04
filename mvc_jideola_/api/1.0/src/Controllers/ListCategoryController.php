@@ -13,21 +13,17 @@ class ListCategoryController {
 
             $send=[];
             $send['id'] = '1';
-            $send['item'] = 'Flipflops';
-            $send['category'] = 'Slippers';
-            $send['availableUnit'] = '12';
-            $send['unitPrice'] = '2000';
-            $send['normalPrice'] = '4000';
+            $send['category'] = 'Food';
+            $send['amountPaid'] = '7000';
+            $send['amountMade'] = '7000';
 
             $all_send[] = $send;
 
             $sendx=[];
             $sendx['id'] = '2';
-            $sendx['item'] = 'Phones';
-            $sendx['category'] = 'Samsung';
-            $sendx['availableUnit'] = '15';
-            $sendx['unitPrice'] = '5000';
-            $sendx['normalPrice'] = '2000';
+            $sendx['category'] = 'Stationaries';
+            $sendx['amountPaid'] = '4000';
+            $sendx['amountMade'] = '4000';
 
             $all_send[] = $sendx;
 
