@@ -23,7 +23,7 @@ class CreatepayController {
         // )
 
         /* Validate */
-        $checkArray = ['payQuan', 'payFullname', 'payChecks', 'payDigit', 'payItem', 'payCat', 'payNor', 'payAvail', 'payUnit'];
+        $checkArray = ['payQuan', 'payFullnamee', 'payChecks', 'payDigit', 'payItem', 'payCat', 'payNor', 'payAvail', 'payUnit'];
         foreach ($checkArray as $check){
             if(isset($this->request[$check])) {
                 if (empty($this->request[$check])) $software->feedback(false, 'PAY_000', ['Oops! '.$check.' was not provided.']);
