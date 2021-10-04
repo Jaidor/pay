@@ -15,7 +15,7 @@ class ListCategoryController {
             $send['id'] = '1';
             $send['category'] = 'Food';
             $send['amountPaid'] = '7000';
-            $send['amountMade'] = '7000';
+            $send['profitMade'] = '7000';
 
             $all_send[] = $send;
 
@@ -23,7 +23,7 @@ class ListCategoryController {
             $sendx['id'] = '2';
             $sendx['category'] = 'Stationaries';
             $sendx['amountPaid'] = '4000';
-            $sendx['amountMade'] = '4000';
+            $sendx['profitMade'] = '4000';
 
             $all_send[] = $sendx;
 
