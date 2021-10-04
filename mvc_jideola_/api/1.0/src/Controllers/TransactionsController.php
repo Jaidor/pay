@@ -66,7 +66,7 @@ class TransactionsController {
             $page['totalPages'] = $totalPages;
             $pagination[] = $page;
 
-            if($all_send) $software->feedback(true, 'TRH_OK', ['Details fetched successfully'],[$all_send, 'pagination'=>$pagination]);
+            if($all_send) $software->feedback(true, 'TRH_OK', ['Details fetched successfully'],['data'=>$all_send, 'pagination'=>$pagination]);
             else $software->feedback(false, 'TRH_000', ['Unable to fetch transaction history']);
                     
         // }
