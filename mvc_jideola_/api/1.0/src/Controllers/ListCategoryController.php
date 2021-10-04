@@ -3,10 +3,10 @@
 namespace Jideola\Controllers;
 use Jideola\Traits\Request;
 
-class ListItemsController {
+class ListCategoryController {
     use Request;
 
-    public function ListItems(){
+    public function ListCategory(){
         global $software;
 
             $all_send=[];

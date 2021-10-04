@@ -8,7 +8,9 @@ class ApiRoute{
         return[
             'create_pay'=>['POST'],
             'transactions'=>['POST'],
-            'list_items'=>['POST']
+            'list_items'=>['POST'],
+            'list_category'=>['POST'],
+            'list_purchase'=>['POST']
         ];
     }
 }
