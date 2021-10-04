@@ -37,7 +37,6 @@ class ListPurchaseController {
             if($all_send) $software->feedback(true, 'TRH_OK', ['Details fetched successfully'],['data'=>$all_send, 'pagination'=>$pagination]);
             else $software->feedback(false, 'TRH_000', ['Unable to fetch transaction history']);
                     
-        // }
                 
     }
 }
