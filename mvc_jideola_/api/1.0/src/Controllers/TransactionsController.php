@@ -15,21 +15,44 @@ class TransactionsController {
         */
         if($this->request['type'] == 'fetch'){
 
-            $pageNo = 1;
+            // $pageNo = 1;
 
 
-            $whereCondition = " where transaction_id = '2'";
-            /* Pagination */
-            $pageno = ($pageNo) ? $pageNo : $pageno = 1;
-            $totalRecords = $software->dbval("select count(*) from #__transaction ".$whereCondition." ");
+            // $whereCondition = " where transaction_id = '2'";
+            // /* Pagination */
+            // $pageno = ($pageNo) ? $pageNo : $pageno = 1;
+            // $totalRecords = $software->dbval("select count(*) from #__transaction ".$whereCondition." ");
 
-            $results_per_page = 10;
-            $offset = ($pageno-1) * $results_per_page;
-            $totalPages = ceil($totalRecords / $results_per_page);
-            $trans = $software->dbarray("select * from #__transaction ".$whereCondition." order by transaction_id desc limit ".$offset.", ".$results_per_page." ");
+            // $results_per_page = 10;
+            // $offset = ($pageno-1) * $results_per_page;
+            // $totalPages = ceil($totalRecords / $results_per_page);
+            // $trans = $software->dbarray("select * from #__transaction ".$whereCondition." order by transaction_id desc limit ".$offset.", ".$results_per_page." ");
+
+            $all_send=[];
+
+            $send=[];
+            $send['id'] = '1';
+            $send['item'] = 'Flipflops';
+            $send['category'] = 'Slippers';
+            $send['availableUnit'] = '12';
+            $send['unitPrice'] = '2000';
+            $send['normalPrice'] = '4000';
+
+            $all_send[] = $send;
+
+            $sendx=[];
+            $sendx['id'] = '2';
+            $sendx['item'] = 'Phones';
+            $sendx['category'] = 'Samsung';
+            $sendx['availableUnit'] = '15';
+            $sendx['unitPrice'] = '5000';
+            $sendx['normalPrice'] = '2000';
+
+            $all_send[] = $send;
+
 
             $tx_details = [];
-            foreach($trans as $tx){
+            foreach($all_send as $tx){
 
                 $value['id'] = $tx['transaction_id'];
                 $value['ref'] = $tx['transaction_message'];

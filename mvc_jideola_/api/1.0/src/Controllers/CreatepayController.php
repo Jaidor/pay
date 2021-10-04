@@ -34,7 +34,13 @@ class CreatepayController {
        $normal_price = $this->request['payNor'];
        $total = ($normal_price * $quantity);
 
-       
+
+    //    $client = new MongoDB\Client(
+    //     'mongodb+srv://kay:myRealPassword@cluster0.mongodb.net/?ssl=true&authSource=admin&serverSelectionTryOnce=false&serverSelectionTimeoutMS=15000"');
+    
+    //    $db = $client->test;
+
+
 
 
          // connect to mongodb
