@@ -22,6 +22,8 @@ class CreatepayController {
         //     [payUnit] => 20000
         // )
 
+        
+
         /* Validate */
         $checkArray = ['payQuan', 'payFullname', 'payChecks', 'payDigit', 'payItem', 'payCat', 'payNor', 'payAvail', 'payUnit'];
         foreach ($checkArray as $check){
